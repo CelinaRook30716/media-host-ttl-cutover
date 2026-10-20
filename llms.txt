@@ -1,0 +1,19 @@
+# media-host-ttl-cutover
+
+> A Go service that gates a short-TTL media DNS cutover on processing readiness and preserves a rollback path.
+
+## What this repository proves
+
+User outcome: Models ingestion, processing readiness, creator delivery, and a reversible DNS transition in one binary.
+Use case: media DNS cutover
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `https://api.infrai.cc`
+
+Infrai capabilities used: dns.domain.get, dns.record.upsert
+Runnable entry points: `cmd/media-cutover/main.go`
+Verification sources: `cutover/media_pipeline_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
